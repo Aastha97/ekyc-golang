@@ -5,10 +5,10 @@ import (
 )
 
 type Customer struct {
-	ID          uint      `json:"id"`
+	ID          uint      `json:"id" gorm:"primary_key"`
 	Name        string    `json:"name"`
 	Email       string    `json:"email"`
-	PlanId      string    `json:"plan_id"`
+	PlanId      uint      `json:"plan" gorm:"foriegn_key"`
 	AccessKey   string    `json:"access_key"`
 	SecretKey   string    `json:"secret_key"`
 	CreatedTime time.Time `json:"created_time"`
